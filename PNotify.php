@@ -74,7 +74,7 @@ class PNotify extends CWidget
           $options_js = CJavaScript::encode($options);
           $options_js = preg_replace('#\s+#', ' ', $options_js);
 
-          Yii::app()->clientScript->registerScript('PNotify_' . $this->id, '
+          Yii::app()->clientScript->registerScript('PNotify_' . $this->id . "_" . $type, '
 				    $.pnotify(' . $options_js . ');
 			    ', CClientScript::POS_READY);
         }
