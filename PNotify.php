@@ -63,7 +63,7 @@ class PNotify extends CWidget
         foreach(Yii::app()->user->getFlashes() as $type => $message) {
           $options['type'] = $type;
           if (is_string($message)) {
-            $options['message'] = $message;            
+            $options['text'] = $message;            
           }
           else if (is_array($message)) {
             foreach($message as $key => $value) {
