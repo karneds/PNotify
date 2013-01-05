@@ -38,6 +38,8 @@ class PNotify extends CWidget
   public $options = array();
   // @ boolean to specify using this widget for flash messages or not
   public $flash_messages_only = false;
+  
+  public $userComponentId = "user";
 
   // function to init the widget
   public function init() {
@@ -60,7 +62,7 @@ class PNotify extends CWidget
       $options = $this->buildOptions(); // Get default options.
       
       if ($this->flash_messages_only) {
-        foreach(Yii::app()->user->getFlashes() as $type => $message) {
+        foreach(Yii::app()->getComponent($this->userComponentId)->getFlashes() as $type => $message) {
           $options['type'] = $type;
           if (is_string($message)) {
             $options['text'] = $message;            
