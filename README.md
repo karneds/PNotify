@@ -13,7 +13,7 @@ Yii 1.1 or above
 ##Usage
 Just extract the files in your extensions directory.
 
-There are two ways to use this widget: the **very simple** way and the **normal** way.
+There are three ways to use this widget: the **very simple** way. the **normal** way, and the **flash messages** way.
 
 ### The very simple way
 This will create a very simple notification without a title and any options. Just submit a "message". Any given options will be ignored.
