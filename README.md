@@ -45,6 +45,23 @@ Result:
 ~~~
 $.pnotify({'title':'You did it!','text':'This notification is awesome! Awesome like you!','type':'success','closer':false,'hide':false});
 ~~~
+### Using with Flash messages
+~~~php
+
+  $this->widget('application.extensions.PNotify.PNotify',
+          array(
+              'flash_messages_only' => true,
+          )
+  );
+~~~
+And then when you do:
+~~~php
+Yii::app()->user->setFlash('success', array('title' => 'Login Successful!', 'text' => 'You successfully logged in. Enjoy!'));
+~~~
+You get the nice message because of:
+~~~
+$.pnotify({'type':'success','title':'Login Successful!','text':'You successfully logged in. Enjoy!'});
+~~~
 ## Options
 You can use ALL the options Pines Notify offers. 
 ~~~php
